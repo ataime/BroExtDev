@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "zancool",
+  "version": "1.0",
+  "permissions": ["webRequest", "webRequestBlocking", "https://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "description": "Description of my extension",
+  "icons": {
+    "16": "icons/smiley16.png",
+    "48": "icons/smiley48.png",
+    "128": "icons/smiley128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/smiley16.png",
+      "38": "icons/smiley16.png"
+    },
+    "default_title": "路径转二维码"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.test.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
